@@ -1,0 +1,4 @@
+# Mac system files
+.DS_Store
+# Local Claude settings
+.claude/

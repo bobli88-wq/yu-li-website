@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yu Li</title>
+  <meta name="description" content="Yu Li, real estate broker with John L. Scott in Renton, WA. Serving buyers and sellers across King and Pierce Counties in English and Mandarin.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23a4472c'/><text x='50' y='68' font-family='Georgia,serif' font-size='52' text-anchor='middle' fill='%23f6efe3' font-style='italic'>YL</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6efe3;
+      --paper-deep: #efe5d4;
+      --ink: #2a221c;
+      --ink-soft: #5e5248;
+      --rule: #d9cbb4;
+      --accent: #a4472c;
+      --accent-soft: #e8c9b4;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #1d1915;
+        --paper-deep: #26201b;
+        --ink: #efe6d8;
+        --ink-soft: #b3a594;
+        --rule: #3d342b;
+        --accent: #e0896a;
+        --accent-soft: #4a2e22;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--paper);
+      background-image:
+        radial-gradient(circle at 15% 10%, var(--paper-deep) 0, transparent 45%),
+        radial-gradient(circle at 90% 95%, var(--paper-deep) 0, transparent 40%);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-size: 1.1875rem;
+      line-height: 1.65;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: 100%;
+      max-width: 620px;
+      animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .kicker {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .kicker::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 400;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(3.4rem, 13vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+    h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--accent);
+    }
+
+    h1 .cn {
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 0.32em;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--ink-soft);
+      vertical-align: middle;
+      margin-left: 0.3em;
+    }
+
+    .tagline {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.25rem, 4vw, 1.55rem);
+      line-height: 1.35;
+      color: var(--ink-soft);
+      margin: 22px 0 34px;
+      max-width: 30ch;
+    }
+
+    .bio p { margin: 0 0 1em; }
+    .bio p:first-child::first-letter {
+      font-family: "Fraunces", Georgia, serif;
+      float: left;
+      font-size: 3.6em;
+      line-height: 0.82;
+      padding: 6px 10px 0 0;
+      color: var(--accent);
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--rule);
+      margin: 36px 0 24px;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.05rem;
+    }
+    .links a {
+      color: var(--ink);
+      text-decoration: none;
+      background-image: linear-gradient(var(--accent-soft), var(--accent-soft));
+      background-size: 100% 0.35em;
+      background-position: 0 88%;
+      background-repeat: no-repeat;
+      transition: background-size 0.25s ease, color 0.25s ease;
+    }
+    .links a:hover, .links a:focus-visible {
+      background-size: 100% 100%;
+      outline: none;
+    }
+    .links a span { color: var(--accent); margin-left: 2px; }
+
+    footer {
+      margin-top: 48px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+      .links a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">Real Estate Broker · Renton, WA</p>
+
+    <h1>Yu <em>Li</em> <span class="cn">李昱</span></h1>
+
+    <p class="tagline">Helping buyers and sellers across King &amp; Pierce Counties, in English and 中文.</p>
+
+    <section class="bio">
+      <p>As a licensed Washington real estate broker with John L. Scott in Renton, I help buyers and sellers across King and Pierce Counties, and I pay special attention to condominiums and HOA communities: resale certificates, association budgets, dues, rental restrictions and special assessments. Those are the details that can make or break a purchase.</p>
+      <p>Before real estate, I spent four years running operations at Nordstrom, leading teams of 25–30 and coordinating vendors on tight deadlines. I bring that same organization to every transaction, keeping lenders, title, escrow and inspectors on schedule so closing day goes smoothly. Evenings and weekends are no problem.</p>
+      <p>Whether you're buying your first condo or selling the family home, I'd love to help. 我也可以用中文为您服务。</p>
+    </section>
+
+    <hr>
+
+    <ul class="links">
+      <li><a href="mailto:bobli88@gmail.com">Email<span>↗</span></a></li>
+      <li><a href="tel:+15742795809">(574) 279-5809<span>↗</span></a></li>
+      <li><a href="https://yuli.johnlscott.com" target="_blank" rel="noopener">My listings at John L. Scott<span>↗</span></a></li>
+    </ul>
+
+    <footer>
+      Yu Li · Real Estate Broker, John L. Scott Real Estate · Renton, WA<br>
+      Washington broker license #26012639 · © <span id="year">2026</span>
+    </footer>
+  </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
