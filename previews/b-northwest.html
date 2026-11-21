@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Option B · Pacific Northwest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone: #f2efe8;
+    --paper: #faf8f3;
+    --forest: #233d30;
+    --forest-2: #2f5240;
+    --sage: #9db59a;
+    --sage-soft: #e3ebdf;
+    --clay: #b8643a;
+    --ink: #1d2721;
+    --ink-soft: #5b675f;
+    --line: #dcd7cb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Source Sans 3", system-ui, sans-serif; font-size: 18px; line-height: 1.65; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .preview-flag { background: var(--clay); color: #fff; text-align: center; font-size: 13px; padding: 6px; }
+  h1, h2, h3 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; letter-spacing: -.01em; }
+
+  /* Hero */
+  .hero { background: var(--forest); color: #f4f1ea; position: relative; overflow: hidden; }
+  .hero nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+  .hero nav .logo { font-family: "DM Serif Display", serif; font-size: 24px; text-decoration: none; }
+  .hero nav .links { display: flex; gap: 28px; font-size: 16px; font-weight: 600; }
+  .hero nav .links a { text-decoration: none; opacity: .8; }
+  .hero nav .links a:hover { opacity: 1; }
+  @media (max-width: 720px) { .hero nav .links { display: none; } }
+  .hero-body { text-align: center; padding: 80px 0 200px; position: relative; z-index: 2; }
+  .hero-body .k { text-transform: uppercase; letter-spacing: .2em; font-size: 13px; color: var(--sage); font-weight: 700; margin: 0 0 20px; }
+  h1 { font-size: clamp(56px, 11vw, 120px); line-height: .95; margin: 0; }
+  h1 em { color: var(--sage); }
+  .hero .cn { font-family: "Songti TC", "Noto Serif TC", serif; font-size: 22px; letter-spacing: .4em; opacity: .75; margin: 18px 0 26px; display: block; }
+  .hero p.lede { font-size: 20px; max-width: 34em; margin: 0 auto 34px; opacity: .88; }
+  .btn { display: inline-block; padding: 14px 28px; border-radius: 4px; font-weight: 700; font-size: 16px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+  .btn-clay { background: var(--clay); color: #fff; }
+  .btn-clay:hover { background: #a2552f; }
+  .btn-line { border: 1.5px solid rgba(244,241,234,.5); color: #f4f1ea; margin-left: 8px; }
+  .mountains { position: absolute; left: 0; right: 0; bottom: -2px; width: 100%; height: 220px; z-index: 1; }
+
+  section { padding: 96px 0; }
+  .center { text-align: center; }
+  .k2 { text-transform: uppercase; letter-spacing: .18em; font-size: 13px; color: var(--clay); font-weight: 700; margin: 0 0 12px; }
+  h2 { font-size: clamp(34px, 5vw, 52px); line-height: 1.1; margin: 0 0 20px; }
+  .intro { max-width: 720px; margin: 0 auto; }
+  .intro p { color: var(--ink-soft); font-size: 20px; }
+
+  .services { background: var(--stone); }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); margin-top: 48px; }
+  .svc { padding: 36px 32px; border-right: 1px solid var(--line); }
+  .svc:last-child { border-right: 0; }
+  .svc .num { font-family: "DM Serif Display", serif; font-size: 44px; color: var(--sage); line-height: 1; }
+  .svc h3 { font-size: 28px; margin: 14px 0 10px; }
+  .svc p { color: var(--ink-soft); margin: 0; font-size: 17px; }
+  @media (max-width: 820px) { .grid3 { grid-template-columns: 1fr; } .svc { border-right: 0; border-bottom: 1px solid var(--line); padding: 28px 0; } }
+
+  .about .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: center; }
+  .photo { aspect-ratio: 3/4; background: var(--sage-soft); border-radius: 200px 200px 8px 8px; display: grid; place-items: center; color: var(--forest); font-family: "DM Serif Display", serif; font-size: 72px; position: relative; }
+  .photo small { position: absolute; bottom: 24px; font-family: "Source Sans 3", sans-serif; font-size: 13px; color: var(--ink-soft); }
+  .about p { color: var(--ink-soft); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .tags span { background: var(--sage-soft); color: var(--forest); border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; }
+  @media (max-width: 820px) { .about .wrap { grid-template-columns: 1fr; } .photo { max-width: 280px; } }
+
+  .reviews { background: var(--forest); color: #f4f1ea; }
+  .reviews .k2 { color: var(--sage); }
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 48px; }
+  @media (max-width: 820px) { .quotes { grid-template-columns: 1fr; } }
+  .quote .mark { font-family: "DM Serif Display", serif; font-size: 72px; line-height: .6; color: var(--sage); }
+  .quote p { font-family: "DM Serif Display", serif; font-size: 22px; line-height: 1.4; margin: 10px 0 18px; }
+  .quote .by { font-size: 15px; opacity: .75; }
+  .quote .stars { color: #e8b04a; letter-spacing: 3px; }
+  .sample { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; border: 1px solid rgba(255,255,255,.35); border-radius: 4px; padding: 1px 6px; margin-left: 8px; }
+
+  .contact .box { max-width: 680px; margin: 48px auto 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 36px; text-align: left; }
+  .tabs { display: flex; gap: 28px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+  .tabs button { background: none; border: 0; border-bottom: 3px solid transparent; padding: 0 0 12px; font-family: inherit; font-size: 17px; font-weight: 700; color: var(--ink-soft); cursor: pointer; margin-bottom: -1px; }
+  .tabs button.on { color: var(--forest); border-color: var(--clay); }
+  label { display: block; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  input, textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 4px; font: inherit; font-size: 17px; margin-bottom: 18px; background: var(--paper); }
+  input:focus, textarea:focus { outline: 2px solid var(--sage); }
+  textarea { min-height: 130px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 560px) { .row2 { grid-template-columns: 1fr; } .contact .box { padding: 24px; } }
+  .google { width: 100%; background: #fff; border: 1.5px solid var(--line); color: var(--ink); margin-bottom: 14px; }
+  .hint { text-align: center; color: var(--ink-soft); font-size: 14px; margin: 0 0 22px; }
+  .rate { color: #d49a2e; font-size: 30px; letter-spacing: 6px; margin-bottom: 18px; }
+  .note { font-size: 14px; color: var(--ink-soft); margin: 14px 0 0; }
+  .contact-line { color: var(--ink-soft); }
+  [hidden] { display: none !important; }
+
+  footer { background: var(--stone); padding: 36px 0; font-size: 15px; color: var(--ink-soft); text-align: center; }
+</style>
+</head>
+<body>
+<div class="preview-flag">Design preview · Option B: Pacific Northwest · forms are mock-ups</div>
+
+<header class="hero">
+  <div class="wrap">
+    <nav><a class="logo" href="#">Yu Li</a><div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div></nav>
+    <div class="hero-body">
+      <p class="k">Real Estate Broker · Renton, Washington</p>
+      <h1>Yu <em>Li</em></h1>
+      <span class="cn">李昱</span>
+      <p class="lede">Finding your place in King &amp; Pierce Counties, with careful guidance in English and 中文.</p>
+      <a class="btn btn-clay" href="#contact">Send me a message</a><a class="btn btn-line" href="#reviews">Reviews</a>
+    </div>
+  </div>
+  <svg class="mountains" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 160 L180 70 L300 130 L470 20 L640 140 L760 90 L900 150 L1080 40 L1260 120 L1440 60 L1440 220 L0 220Z" fill="#2f5240"/>
+    <path d="M0 190 L160 130 L320 175 L520 110 L700 180 L880 120 L1060 175 L1240 115 L1440 170 L1440 220 L0 220Z" fill="#3d6650"/>
+    <path d="M0 210 Q360 170 720 200 T1440 195 L1440 220 L0 220Z" fill="#faf8f3"/>
+  </svg>
+</header>
+
+<section class="center"><div class="wrap intro">
+  <p class="k2">Welcome</p>
+  <h2>Thoughtful guidance for one of life's biggest decisions.</h2>
+  <p>I'm a licensed Washington broker with John L. Scott, helping buyers and sellers across King and Pierce Counties, with special care for condos and HOA communities.</p>
+</div></section>
+
+<section id="services" class="services"><div class="wrap center">
+  <p class="k2">Services</p><h2>How I can help</h2>
+  <div class="grid3" style="text-align:left">
+    <div class="svc"><div class="num">01</div><h3>Buying a home</h3><p>From first showing to closing, I keep lenders, inspectors, title and escrow moving on schedule.</p></div>
+    <div class="svc"><div class="num">02</div><h3>Selling a home</h3><p>Pricing, preparation and marketing to reach the right buyers in your neighborhood.</p></div>
+    <div class="svc"><div class="num">03</div><h3>Condos &amp; HOAs</h3><p>I review resale certificates, budgets, dues and special assessments so there are no surprises.</p></div>
+  </div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <div class="photo">YL<small>Your photo goes here</small></div>
+  <div>
+    <p class="k2">About</p>
+    <h2>Organized, patient and always reachable.</h2>
+    <p>Before real estate, I spent four years running operations at Nordstrom, leading teams of 25–30 and coordinating vendors on tight deadlines. That same discipline keeps your transaction calm and on track.</p>
+    <p>Evenings and weekends are no problem. 我也可以用中文为您服务。</p>
+    <div class="tags"><span>King County</span><span>Pierce County</span><span>English · 中文</span><span>Condos &amp; HOAs</span></div>
+  </div>
+</div></section>
+
+<section id="reviews" class="reviews"><div class="wrap center">
+  <p class="k2">Kind words</p><h2>From clients</h2>
+  <div class="quotes" style="text-align:left">
+    <div class="quote"><div class="mark">“</div><p>Placeholder review. Real reviews from signed-in visitors will appear here.</p><div class="stars">★★★★★</div><div class="by">Client name <span class="sample">Sample</span></div></div>
+    <div class="quote"><div class="mark">“</div><p>Placeholder review showing how a longer one reads in this layout.</p><div class="stars">★★★★★</div><div class="by">Client name <span class="sample">Sample</span></div></div>
+    <div class="quote"><div class="mark">“</div><p>Placeholder review. A shorter one.</p><div class="stars">★★★★★</div><div class="by">Client name <span class="sample">Sample</span></div></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap center">
+  <p class="k2">Get in touch</p><h2>Let's find your place.</h2>
+  <p class="contact-line">bobli88@gmail.com · (574) 279-5809 · yuli.johnlscott.com</p>
+  <div class="box">
+    <div class="tabs"><button class="on" data-tab="msg">Send a message</button><button data-tab="rev">Leave a review</button></div>
+    <div data-pane="msg">
+      <div class="row2"><div><label>Name</label><input placeholder="Your name"></div><div><label>Email</label><input placeholder="you@email.com"></div></div>
+      <label>Message</label><textarea placeholder="I'm looking for…"></textarea>
+      <button class="btn btn-clay" style="width:100%">Send message</button>
+      <p class="note">Only Yu will see this message.</p>
+    </div>
+    <div data-pane="rev" hidden>
+      <button class="btn google"><b style="color:#4285f4">G</b>&nbsp; Continue with Google</button>
+      <p class="hint">Sign in so reviews stay genuine</p>
+      <label>Your rating</label><div class="rate">★★★★★</div>
+      <label>Your review</label><textarea placeholder="How was working with Yu?"></textarea>
+      <button class="btn btn-clay" style="width:100%">Post review</button>
+    </div>
+  </div>
+</div></section>
+
+<footer>Yu Li · Real Estate Broker, John L. Scott Real Estate · Renton, WA · WA broker license #26012639</footer>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('[data-pane]').forEach(p => p.hidden = p.dataset.pane !== b.dataset.tab);
+});
+</script>
+</body>
+</html>
